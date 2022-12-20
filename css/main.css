@@ -1,8 +1,9 @@
 /* Global Varibals */
 :root {
     --main-color: #19c8fa;
-    --transparent-color: rgb(15 116 143 / 70%);
+    --transparent-color: #0f748fb2;
     --image-bg: #146077;;
+    --section-padding: 100px;
 }
 /* Global Varibals */
 /* Start of Global Rules */
@@ -57,8 +58,9 @@ ul {
 }
 
 .special-heading h2 {
-    font-size: 30px;
-    text-transform: capitalize;
+    font-size: 40px;
+    font-weight: normal;
+    text-transform: uppercase;
     margin-bottom: 70px;
     position: relative;
 }
@@ -336,7 +338,6 @@ header .container nav .searchbar i {
     border: 1px solid white;
     background-color: transparent;
     border-radius: 50%;
-    padding-right: 15px;
 }
 
 .landing .overlay ul li.active{
@@ -346,8 +347,8 @@ header .container nav .searchbar i {
 /* End of Landing */
 /* Start of Services */
 .services {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
 }
 
 @media (min-width: 767px) {
@@ -384,15 +385,6 @@ header .container nav .searchbar i {
     flex-basis: 85%;
 }
 
-/* @media (max-width: 767px) {
-    .services .services-content .service .service-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-} */
-
 .services .services-content .service .service-text h3 {
     color: var(--main-color);
     font-weight: bold;
@@ -406,3 +398,550 @@ header .container nav .searchbar i {
     line-height: 1.8;
 }
 /* End of Services */
+/* Start of Design */
+.design {
+    background-image: url(../images/design-features.jpg);
+    background-size: cover;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.design .overlay {
+    background-color: #0008;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.design .overlay .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #0f748fb2;
+    color: white;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .design .overlay .text {
+        width: 100%;
+        align-items: center;
+    }
+}
+
+.design .overlay .text p {
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 1.8;
+    margin-left: 10px;
+    max-width: calc(100% - 10px);
+    text-align: center;
+}
+
+.design .overlay .text .cont {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 500px;
+    max-width: 100%;
+    margin: 10px 0 10px 10px;
+}
+
+.design .overlay .text .cont i {
+    font-size: 10px;
+    flex: 1;
+}
+
+.design .overlay .text .cont p {
+    font-size: 15px;
+    display: flex;
+    flex-basis: 80%;
+}
+
+.design .overlay .mobile-img {
+    position: absolute;
+    left: 25%;
+    bottom: -65px;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 767px) {
+    .design .overlay .mobile-img {
+        display: none;
+    }
+}
+/* End of Design */
+/* Strat of Portfolio */
+.portfolio {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.portfolio .categories {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.portfolio .categories .cat {
+    padding: 10px;
+}
+
+.portfolio .categories .cat.active {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.portfolio .images-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.portfolio .images-grid .test-img::before {
+    content: "Awesome Image";
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    padding: 20px 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.portfolio .images-grid .test-img:hover::before {
+    opacity: 1;
+}
+
+.portfolio .images-grid .test-img {
+    width: 25%;
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s;
+}
+
+@media (max-width: 1199px) {
+    .portfolio .images-grid .test-img {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .portfolio .images-grid .test-img {
+        width: 100%;
+    }
+}
+
+.portfolio .images-grid .test-img::after {
+    content: "Photography";
+    width: 100%;
+    max-height: 60px;
+    color: var(--main-color);
+    padding: 50px 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.portfolio .images-grid .test-img:hover::after {
+    opacity: 1;
+}
+
+
+.portfolio .images-grid .test-img img{
+    max-width: 100%;
+}
+
+.portfolio .images-grid .test-img:hover img {
+    transform: rotate(3deg) scale(1.1);
+    transition: 0.3s;
+}
+
+.portfolio a {
+    display: block;
+    width: 100px;
+    padding: 15px;
+    background-color: var(--main-color);
+    margin: 30px auto;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+/* End of Portfolio */
+/* Start of Video */
+.video {
+    position: relative;
+}
+
+.video::before {
+    content: "";
+    width: 100%;
+    height: 99.5%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 40%);
+}
+
+.video video {
+    width: 100%;
+}
+
+.video .text {
+    width: 100%;
+    background-color: var(--transparent-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+.video .text h2 {
+    font-weight: normal;
+    margin: 0 0 30px;
+    text-transform: uppercase;
+}
+
+.video .text p {
+    margin-bottom: 30px;
+}
+
+.video .text button {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    border: none;
+}
+/* End of Video */
+/* Start of About */
+.about {
+    padding-top: var(--section-padding);
+    overflow: hidden;
+    text-align: center;
+}
+
+.about img {
+    position: relative;
+    max-width: 100%;
+    bottom: -120px;
+    margin-top: -120px;
+}
+
+@media (max-width: 767px) {
+    .about img {
+        bottom: -70px;
+        margin-top: -70px;
+    }
+}
+/* End of About */
+/* Start of Stats */
+.stats {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-image: url("../images/stats.png");
+    text-align: center;
+    background-size: cover;
+    position: relative;
+}
+
+.stats .container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stats .container .stats-info {
+    display: flex;
+    padding: 15px;
+    flex: 1;
+    flex-direction: column;
+    flex-basis: 25%;
+    align-items: center;
+    color: white;
+    background-color: var(--transparent-color);
+}
+
+@media (max-width: 992px) {
+    .stats .container .stats-info {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats .container .stats-info {
+        flex-basis: 100%;
+    }
+}
+
+.stats .container .stats-info i {
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    flex: 1;
+    border-radius: 50%;
+}
+
+.stats .container .stats-info .number {
+    font-size: 50px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+/* End of Stats */
+/* Start of Our-Skills */
+.our-skills {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.our-skills .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+}
+
+.our-skills .container .col {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 45%;
+}
+
+.our-skills .container .col .title h3 {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.our-skills .container .col .title h3+p {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.our-skills .container .testimonials {
+    position: relative;
+}
+
+.our-skills .container .testimonials .testi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.our-skills .container .testimonials .testi::before {
+    content: "";
+    width: 70%;
+    height: 1px;
+    background-color: #777;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.our-skills .container .testimonials .testi img {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.our-skills .container .testimonials .testi .text {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.our-skills .container .testi .text p:first-of-type {
+    width: 100%;
+}
+
+.our-skills .container .testi .text p:last-of-type {
+    color: #777;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.our-skills .container .testimonials ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 40px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.our-skills .container .testimonials ul li{
+    width: 10px;
+    height: 10px;
+    border: 1px solid #777;
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+.our-skills .container .testimonials ul li.active{
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+}
+
+.our-skills .container .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.our-skills .container .skills p {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.our-skills .container .skills .bar {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 40px;
+    position: relative;
+}
+.our-skills .container .skills .adobe {
+    background-image: linear-gradient(90deg, var(--main-color) 90%, gray 90%);
+    position: relative;
+}
+
+.our-skills .container .skills .adobe::before {
+    content: "90%";
+    background-color: black;
+    color: white;
+    position: absolute;
+    left: 90%;
+    top: -40px;
+    transform: translateX(-50%);
+    padding: 5px;
+    border-radius: 15%;
+}
+
+.our-skills .container .skills .adobe::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, 50%) rotate(45deg);
+    position: absolute;
+    left: 90%;
+    top: -25px;
+    background-color: black;
+    z-index: -1;
+}
+
+
+.our-skills .container .skills .hc {
+    background-image: linear-gradient(90deg, var(--main-color) 85%, gray 85%);
+    position: relative;
+}
+
+.our-skills .container .skills .hc::before {
+    content: "85%";
+    background-color: black;
+    color: white;
+    position: absolute;
+    left: 85%;
+    top: -40px;
+    transform: translateX(-50%);
+    padding: 5px;
+    border-radius: 15%;
+}
+
+.our-skills .container .skills .hc::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, 50%) rotate(45deg);
+    position: absolute;
+    left: 85%;
+    top: -25px;
+    background-color: black;
+    z-index: -1;
+}
+
+
+.our-skills .container .skills .js {
+    background-image: linear-gradient(90deg, var(--main-color) 80%, gray 80%);
+    position: relative;
+}
+
+.our-skills .container .skills .js::before {
+    content: "80%";
+    background-color: black;
+    color: white;
+    position: absolute;
+    left: 80%;
+    top: -40px;
+    transform: translateX(-50%);
+    padding: 5px;
+    border-radius: 15%;
+}
+
+.our-skills .container .skills .js::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, 50%) rotate(45deg);
+    position: absolute;
+    left: 80%;
+    top: -25px;
+    background-color: black;
+    z-index: -1;
+}
+
+
+.our-skills .container .skills .php {
+    background-image: linear-gradient(90deg, var(--main-color) 90%, gray 90%);
+    position: relative;
+}
+
+.our-skills .container .skills .php::before {
+    content: "90%";
+    background-color: black;
+    color: white;
+    position: absolute;
+    left: 90%;
+    top: -40px;
+    transform: translateX(-50%);
+    padding: 5px;
+    border-radius: 15%;
+}
+
+.our-skills .container .skills .php::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, 50%) rotate(45deg);
+    position: absolute;
+    left: 90%;
+    top: -25px;
+    background-color: black;
+    z-index: -1;
+}
+
+/* End of Our-Skills */
